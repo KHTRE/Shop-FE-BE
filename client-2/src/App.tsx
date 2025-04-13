@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import AppRouter from './router/AppRouter';
 
 const styles = {
   root: css`
@@ -7,14 +8,10 @@ const styles = {
   `,
 };
 
-const App: React.FC = () => {
-
-
+export const App = () => {
   return (
     <div css={styles.root}>
-      <div>645</div>      
+      <AppRouter/>      
     </div>    
   )
 }
-
-export default App
