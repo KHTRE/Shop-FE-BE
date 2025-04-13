@@ -1,5 +1,8 @@
 import { css } from '@emotion/react';
 import AppRouter from './router/AppRouter';
+import { NavBar } from './components/NavBar';
+import { useContext } from 'react';
+import { Context } from './store/ContextProvider';
 
 const styles = {
   root: css`
@@ -9,8 +12,14 @@ const styles = {
 };
 
 export const App = () => {
+  const {appState} = useContext(Context)
+  
+  console.log(' user: ', appState.user);
+
+  
   return (
     <div css={styles.root}>
+      <NavBar/>
       <AppRouter/>      
     </div>    
   )
