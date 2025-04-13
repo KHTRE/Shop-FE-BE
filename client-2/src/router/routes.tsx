@@ -15,12 +15,12 @@ export enum ROUTES {
 
 export const privateRoutes = [
   {
-      path: ROUTES.Admin,
-      Component: Admin
+    path: ROUTES.Admin,
+    Component: Admin
   },
   {
-      path: ROUTES.Basket,
-      Component: Basket
+    path: ROUTES.Basket,
+    Component: Basket
   },
 ]
 
