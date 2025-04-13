@@ -1,4 +1,5 @@
 import { jwtDecode } from "jwt-decode";
+import { baseUrl } from "./endpoints";
 
 // export const registration = async (email, password) => {
 //   const {data} = await $host.post('api/user/registration', {email, password, role: 'ADMIN'})
@@ -45,7 +46,7 @@ export const customFetch = async (url: string, options: RequestInit = {}) => {
 
 export const check = async () => {
   try {
-    const data = await customFetch('http://localhost:5000/api/user/auth', {
+    const data = await customFetch(baseUrl + 'api/user/auth', {
       method: 'GET',
     });
     localStorage.setItem('token', data.token);
@@ -57,7 +58,7 @@ export const check = async () => {
 
 export const login = async (email: string, password: string) => {
   try {
-    const data = await customFetch('http://localhost:5000/api/user/login', {
+    const data = await customFetch(baseUrl + 'api/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -74,12 +75,12 @@ export const login = async (email: string, password: string) => {
 
 export const registration = async (email: string, password: string) => {
   try {
-    const data = await customFetch('http://localhost:5000/api/user/registration', {
+    const data = await customFetch(baseUrl + 'api/user/registration', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email, password, role: 'ADMIN' }),
+      body: JSON.stringify({ email, password, role: 'USER' }),
     });
 
     // Assuming the response contains a token
